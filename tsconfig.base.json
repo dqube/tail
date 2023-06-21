@@ -8,13 +8,25 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "ES2022",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": ["es2022", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@app/*": ["libs/*"],
+      "@app/auth/detail": ["libs/features/auth/detail/src/index.ts"],
+      "@app/auth/list": ["libs/features/auth/list/src/index.ts"],
+      "@app/auth/shell": ["libs/features/auth/shell/src/index.ts"],
+      "@app/icon": ["libs/shared/ui/icon/src/index.ts"],
+      "@app/icon/loader": ["libs/shared/ui/icon/loader/src/index.ts"],
+      "@app/layout": ["libs/shared/ui/layout/src/index.ts"],
+      "@app/ui": ["libs/shared/ui/components/src/index.ts"],
+      "@app/ui/core": ["libs/shared/ui/components/core/src/index.ts"],
+      "@env/*": ["apps/admin/src/environments/*"]
+    },
+    "strict": true
   },
   "exclude": ["node_modules", "tmp"]
 }

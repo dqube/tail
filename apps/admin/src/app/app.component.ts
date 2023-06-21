@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { environment } from '@env/environment';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'tail-root',
+  imports: [RouterModule],
+  selector: 'admin-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [Title],
 })
-export class AppComponent {
-  title = 'admin';
+export class AppComponent implements OnInit {
+  readonly title = inject(Title);
+  ngOnInit() {
+    this.title.setTitle(environment.app_name);
+  }
 }

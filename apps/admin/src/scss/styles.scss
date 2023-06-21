@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also use other style files */
+@use 'font';
+
+@use './tailwind/tailwind';
+@use 'variables';
+
+@use './tailwind/custom';
+@use './tailwind/buttons';
+@use './tailwind/components';
+@use './tailwind/forms';
+@use './tailwind/dropdown';
+@use './tailwind/modal';
+@use './tailwind/offcanvas';
+@use './tailwind/tooltip';
+@use './tailwind/tables';
+@use './tailwind/charts';
+@use './tailwind/pagination';

@@ -1,0 +1,36 @@
+{
+  "name": "features\\auth-detail",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/features/auth/detail/src",
+  "prefix": "tail",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/features/auth/detail/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/features/auth/detail/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/features/auth/detail/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/features/auth/detail/**/*.ts",
+          "libs/features/auth/detail/**/*.html"
+        ]
+      }
+    }
+  }
+}
